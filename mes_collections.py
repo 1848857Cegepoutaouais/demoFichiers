@@ -1,5 +1,13 @@
 # 1. Liste simple
+import csv
+import json
+
+from urllib3.filepost import writer
+
 fruits = ["Pomme", "Banane", "Orange"]
+with open("fruits.csv", "w") as fichier:
+    writer = csv.writer(fichier)
+    writer.writerow(fruits)
 
 with open("demo_liste.txt", "w") as f:
     f.write(",".join(fruits))
@@ -9,6 +17,11 @@ with open("demo_liste_2.txt", "w") as f:
 
 # 2. Dictionnaire simple
 capitales = {"France": "Paris", "Canada": "Ottawa", "Japon": "Tokyo"}
+
+with open("capitales.csv", "w", newline="") as fichier:
+    writer = csv.DictWriter(fichier, fieldnames=capitales.keys())   #https://docs.python.org/3.13/library/csv.html#csv.DictWriter
+    writer.writeheader()                                            #https://docs.python.org/3.13/library/csv.html#csv.DictWriter.writeheader
+    writer.writerow(capitales)                                      #https://docs.python.org/3.13/library/csv.html#csv.DictWriter.writerow
 
 with open("demo_dict.txt", "w") as f:
     for k, v in capitales.items():
@@ -20,6 +33,10 @@ notes = [
     [14, 10, 18],
     [19, 11, 16]
 ]
+
+with open("notes.csv", "w", newline="") as fichier:
+    writer = csv.writer(fichier)
+    writer.writerows(notes)
 
 with open("demo_notes.txt", "w") as f:
     for ls_note in notes:
@@ -34,9 +51,17 @@ eleves = [
     {"nom": "Chloé", "age": 14}
 ]
 
+with open("eleves.csv", "w", encoding="utf-8", newline="") as fichier:
+    writer = csv.DictWriter(fichier, fieldnames=eleves[0].keys())   #https://docs.python.org/3.13/library/csv.html#csv.DictWriter
+    writer.writeheader()                                            #https://docs.python.org/3.13/library/csv.html#csv.DictWriter.writeheader
+    writer.writerows(eleves)
+
 # 5. Dictionnaire de listes (ex: matières -> notes)
 bulletins = {
     "Math": [12, 14, 18],
     "Français": [15, 11, 16],
     "Histoire": [17, 10, 19]
 }
+
+with open("bulletins.json", "w", encoding="utf-8") as f:
+    json.dump(bulletins, f, ensure_ascii=False, indent=4)
