@@ -6,3 +6,5 @@ with open("Magasin/ventes.json", "r", encoding="utf-8") as inventaire:
 print(dict_ventes)
 print(len(dict_ventes))
 print(sum(dict_ventes.values()))
+
+
