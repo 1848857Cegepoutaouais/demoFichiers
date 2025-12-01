@@ -6,17 +6,17 @@ from urllib3.filepost import writer
 
 fruits = ["Pomme", "Banane", "Orange"]
 
-with open("fruits.json", "w", encoding="utf-8") as f:
+with open("Magasin/fruits.json", "w", encoding="utf-8") as f:
     json.dump(fruits, f, ensure_ascii=False, indent=4)              #https://docs.python.org/3/library/json.html
 
-with open("fruits.csv", "w") as fichier:
+with open("Magasin/fruits.csv", "w") as fichier:
     writer = csv.writer(fichier)
     writer.writerow(fruits)
 
-with open("demo_liste.txt", "w") as f:
+with open("Magasin/demo_liste.txt", "w") as f:
     f.write(",".join(fruits))
 
-with open("demo_liste_2.txt", "w") as f:
+with open("Magasin/demo_liste_2.txt", "w") as f:
     f.write("\n".join(fruits))
 
 # 2. Dictionnaire simple
@@ -41,14 +41,14 @@ notes = [
     [19, 11, 16]
 ]
 
-with open("notes.json", "w", encoding="utf-8") as f:
+with open("Ecole/notes.json", "w", encoding="utf-8") as f:
     json.dump(notes, f, ensure_ascii=False, indent=4)               #https://docs.python.org/3/library/json.html
 
-with open("notes.csv", "w", newline="") as fichier:
+with open("Ecole/notes.csv", "w", newline="") as fichier:
     writer = csv.writer(fichier)
     writer.writerows(notes)
 
-with open("demo_notes.txt", "w") as f:
+with open("Ecole/demo_notes.txt", "w") as f:
     for ls_note in notes:
         for note in ls_note:
             f.write(str(note) + ";")
@@ -61,10 +61,10 @@ eleves = [
     {"nom": "Chloé", "age": 14}
 ]
 
-with open("eleves.json", "w", encoding="utf-8") as f:
+with open("Ecole/eleves.json", "w", encoding="utf-8") as f:
     json.dump(eleves, f, ensure_ascii=False, indent=4)              #https://docs.python.org/3/library/json.html
 
-with open("eleves.csv", "w", encoding="utf-8", newline="") as fichier:
+with open("Ecole/eleves.csv", "w", encoding="utf-8", newline="") as fichier:
     writer = csv.DictWriter(fichier, fieldnames=eleves[0].keys())   #https://docs.python.org/3.13/library/csv.html#csv.DictWriter
     writer.writeheader()                                            #https://docs.python.org/3.13/library/csv.html#csv.DictWriter.writeheader
     writer.writerows(eleves)
@@ -76,5 +76,5 @@ bulletins = {
     "Histoire": [17, 10, 19]
 }
 
-with open("bulletins.json", "w", encoding="utf-8") as f:
+with open("Ecole/bulletins.json", "w", encoding="utf-8") as f:
     json.dump(bulletins, f, ensure_ascii=False, indent=4)           #https://docs.python.org/3/library/json.html
