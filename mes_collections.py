@@ -7,7 +7,7 @@ from urllib3.filepost import writer
 fruits = ["Pomme", "Banane", "Orange"]
 
 with open("fruits.json", "w", encoding="utf-8") as f:
-    json.dump(fruits, f, ensure_ascii=False, indent=4)
+    json.dump(fruits, f, ensure_ascii=False, indent=4)              #https://docs.python.org/3/library/json.html
 
 with open("fruits.csv", "w") as fichier:
     writer = csv.writer(fichier)
@@ -23,7 +23,7 @@ with open("demo_liste_2.txt", "w") as f:
 capitales = {"France": "Paris", "Canada": "Ottawa", "Japon": "Tokyo"}
 
 with open("capitales.json", "w", encoding="utf-8") as f:
-    json.dump(capitales, f, ensure_ascii=False, indent=4)
+    json.dump(capitales, f, ensure_ascii=False, indent=4)           #https://docs.python.org/3/library/json.html
 
 with open("capitales.csv", "w", newline="") as fichier:
     writer = csv.DictWriter(fichier, fieldnames=capitales.keys())   #https://docs.python.org/3.13/library/csv.html#csv.DictWriter
@@ -42,7 +42,7 @@ notes = [
 ]
 
 with open("notes.json", "w", encoding="utf-8") as f:
-    json.dump(notes, f, ensure_ascii=False, indent=4)
+    json.dump(notes, f, ensure_ascii=False, indent=4)               #https://docs.python.org/3/library/json.html
 
 with open("notes.csv", "w", newline="") as fichier:
     writer = csv.writer(fichier)
@@ -62,7 +62,7 @@ eleves = [
 ]
 
 with open("eleves.json", "w", encoding="utf-8") as f:
-    json.dump(eleves, f, ensure_ascii=False, indent=4)
+    json.dump(eleves, f, ensure_ascii=False, indent=4)              #https://docs.python.org/3/library/json.html
 
 with open("eleves.csv", "w", encoding="utf-8", newline="") as fichier:
     writer = csv.DictWriter(fichier, fieldnames=eleves[0].keys())   #https://docs.python.org/3.13/library/csv.html#csv.DictWriter
@@ -77,4 +77,4 @@ bulletins = {
 }
 
 with open("bulletins.json", "w", encoding="utf-8") as f:
-    json.dump(bulletins, f, ensure_ascii=False, indent=4)
+    json.dump(bulletins, f, ensure_ascii=False, indent=4)           #https://docs.python.org/3/library/json.html
